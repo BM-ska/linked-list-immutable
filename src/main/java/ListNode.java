@@ -1,3 +1,6 @@
+/**
+ * @author Barbara Moczulska
+ */
 public interface ListNode<T> {
     T data();
 

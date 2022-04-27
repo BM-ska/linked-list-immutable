@@ -1,3 +1,6 @@
+/**
+ * @author Barbara Moczulska
+ */
 public interface LinkedList<T> {
 
     LinkedList<T> add(T i);

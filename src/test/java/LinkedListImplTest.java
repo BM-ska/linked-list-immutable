@@ -3,11 +3,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Barbara Moczulska
+ */
 class LinkedListImplTest {
     LinkedList<Integer> linkedList;
 
     @BeforeEach
-    void initializeTest(){
+    void initializeTest() {
         linkedList = new LinkedListImpl<>();
     }
 
@@ -44,7 +47,7 @@ class LinkedListImplTest {
     }
 
     @Test
-    void testAddNodeAsElement(){
+    void testAddNodeAsElement() {
         linkedList = linkedList.add(1);
 
         ListNode<Integer> node = new LinkedListImpl.Node<>(2);
@@ -60,7 +63,7 @@ class LinkedListImplTest {
     }
 
     @Test
-    void testThrowingExceptionWhenCycleDetected(){
+    void testNotThrowingExceptionWithDeepCopyImplementationWhenCyclePassed() {
         linkedList = linkedList.add(1);
 
         ListNode<Integer> node = new LinkedListImpl.Node<>(2);
@@ -70,6 +73,6 @@ class LinkedListImplTest {
         linkedList = linkedList.add(3);
         linkedList = linkedList.add(4);
 
-        assertDoesNotThrow( () -> linkedList.add(node));
+        assertDoesNotThrow(() -> linkedList.add(node));
     }
 }
