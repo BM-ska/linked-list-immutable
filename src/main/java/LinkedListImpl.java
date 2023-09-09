@@ -1,5 +1,7 @@
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.IntStream;
 
 /**
  * @author Barbara Moczulska
@@ -22,7 +24,9 @@ public final class LinkedListImpl<T> implements LinkedList<T> {
             throw new LinkedListCycleException("Cycle detected");
         }
 
+        //kopiowanie całej listy deep copy
         this.head = node;
+        Object
 
     }
 
@@ -164,6 +168,13 @@ public final class LinkedListImpl<T> implements LinkedList<T> {
         public boolean isEmpty() {
             return this.value == null;
         }
+
+    }
+
+
+    public static void main(String[] args) {
+
+       // IntStream.rangeClosed(1,30).filter((i) -> i % 2 == 0).map((i) -> i * 5).forEach(System.out::print);
 
     }
 
